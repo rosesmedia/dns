@@ -19,6 +19,14 @@ pipeline {
         //     steps { ciSkip action: 'check' }
         // }
 
+        stage('Prepare') {
+            steps {
+                script {
+                    sh(script: "terraform init", returnStdout: true).trim()
+                }
+            }
+        }
+
         stage('Plan') {
             // when { changeRequest() }
             steps {
