@@ -19,7 +19,7 @@ pipeline {
         //     steps { ciSkip action: 'check' }
         // }
 
-        stage('Prepare') {
+        stage('Init') {
             steps {
                 script {
                     sh(script: "terraform init")
@@ -28,10 +28,28 @@ pipeline {
         }
 
         stage('Plan') {
-            // when { changeRequest() }
+            when {
+                anyOf {
+                    branch 'main'
+                    changeRequest()
+                }
+            }
+
             steps {
                 script {
                     sh(script: "terraform plan")
+                }
+            }
+        }
+
+        stage('Apply') {
+            when {
+                branch 'main'
+            }
+
+            steps {
+                script {
+                    sh(script: "terraform apply -auto-approve")
                 }
             }
         }
