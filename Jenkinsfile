@@ -22,7 +22,7 @@ pipeline {
         stage('Prepare') {
             steps {
                 script {
-                    sh(script: "terraform init", returnStdout: true).trim()
+                    sh(script: "terraform init")
                 }
             }
         }
@@ -31,7 +31,7 @@ pipeline {
             // when { changeRequest() }
             steps {
                 script {
-                    sh(script: "terraform plan", returnStdout: true).trim()
+                    sh(script: "terraform plan")
                 }
             }
         }
