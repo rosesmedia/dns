@@ -39,10 +39,6 @@ locals {
       name     = "www.signup.roses.media"
       content  = "roses.media"
     }
-    media_roses_test = {
-      name = "test.roses.media"
-      content = "roses.media"
-    }
   }
 }
 
