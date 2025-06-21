@@ -14,11 +14,6 @@ pipeline {
     }
 
     stages {
-        // stage('Prepare') {
-        //     when { not {triggeredBy cause: 'UserIdCause' } }
-        //     steps { ciSkip action: 'check' }
-        // }
-
         stage('Init') {
             steps {
                 script {

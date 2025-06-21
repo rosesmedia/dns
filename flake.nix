@@ -23,7 +23,6 @@
           packages = with pkgs; [
             terraform
             terraform-providers.cloudflare
-            cf-terraforming
           ];
         };
       }
