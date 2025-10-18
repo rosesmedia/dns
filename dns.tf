@@ -40,6 +40,13 @@ locals {
       content  = "roses.media"
     }
   }
+  roses_media_txt_records = {
+    # Github domain verification
+    media_roses__github-pages-challenge = {
+      name    = "_github-pages-challenge-rosesmedia.roses.media"
+      content = "\"f35044f68b1817ee82f89cb696106c\""
+    }
+  }
 }
 
 resource "cloudflare_dns_record" "records_cname_media_roses" {
@@ -64,4 +71,19 @@ resource "cloudflare_dns_record" "record_cname_media_roses_radio_stream" {
   type     = "A"
   zone_id  = var.roses_media_zone_id
   settings = {}
+}
+
+resource "cloudflare_dns_record" "records_txt_media_roses" {
+  for_each = local.roses_media_txt_records
+
+  name    = each.value.name
+  content = each.value.content
+
+  proxied  = false
+  ttl      = 1
+  type     = "TXT"
+  zone_id  = var.roses_media_zone_id
+  settings = {}
+  comment  = var.dns_record_comment
+
 }
