@@ -5,7 +5,7 @@ locals {
   roses_media_cname_records = {
     media_roses_dev_wildcard = {
       name     = "*.dev.roses.media"
-      content  = "ystv.co.uk"
+      content  = "vip.infra.ystv.co.uk"
     }
     media_roses_radio_ingest = {
       name     = "ingest.radio.roses.media"
@@ -21,7 +21,7 @@ locals {
     }
     media_roses_wildcard = {
       name     = "*.roses.media"
-      content  = "ystv.co.uk"
+      content  = "vip.infra.ystv.co.uk"
     }
     media_roses = {
       name     = "roses.media"
@@ -29,7 +29,7 @@ locals {
     }
     media_roses_to_signup = {
       name     = "signup.to.roses.media"
-      content  = "ystv.co.uk"
+      content  = "vip.infra.ystv.co.uk"
     }
     media_roses_www = {
       name     = "www.roses.media"
@@ -37,7 +37,7 @@ locals {
     }
     media_roses_signup_www = {
       name     = "www.signup.roses.media"
-      content  = "roses.media"
+      content  = "vip.infra.ystv.co.uk"
     }
   }
   roses_media_txt_records = {
