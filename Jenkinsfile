@@ -9,11 +9,23 @@ pipeline {
         node 'nomad'
     }
 
+    options {
+        ansiColor('xterm')
+    }
+
     environment {
         CLOUDFLARE_API_TOKEN = credentials('cloudflare-api-token-roses-media-dns')
     }
 
     stages {
+        stage('Check Formatting') {
+            steps {
+                script {
+                    sh(script: "terraform fmt -check")
+                }
+            }
+        }
+        
         stage('Init') {
             steps {
                 script {

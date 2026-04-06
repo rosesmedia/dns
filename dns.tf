@@ -4,40 +4,40 @@
 locals {
   roses_media_cname_records = {
     media_roses_dev_wildcard = {
-      name     = "*.dev.roses.media"
-      content  = "ystv.co.uk"
+      name    = "*.dev.roses.media"
+      content = "vip.infra.ystv.co.uk"
     }
     media_roses_radio_ingest = {
-      name     = "ingest.radio.roses.media"
-      content  = "dolby.ury.york.ac.uk"
+      name    = "ingest.radio.roses.media"
+      content = "dolby.ury.york.ac.uk"
     }
     media_roses_mumble = {
-      name     = "mumble.roses.media"
-      content  = "tsuro.infra.archess.mn"
+      name    = "mumble.roses.media"
+      content = "tsuro.infra.archess.mn"
     }
     media_roses_radio = {
-      name     = "radio.roses.media"
-      content  = "ury.york.ac.uk"
+      name    = "radio.roses.media"
+      content = "ury.york.ac.uk"
     }
     media_roses_wildcard = {
-      name     = "*.roses.media"
-      content  = "ystv.co.uk"
+      name    = "*.roses.media"
+      content = "vip.infra.ystv.co.uk"
     }
     media_roses = {
-      name     = "roses.media"
-      content  = "rosesmedia.github.io"
+      name    = "roses.media"
+      content = "rosesmedia.github.io"
     }
     media_roses_to_signup = {
-      name     = "signup.to.roses.media"
-      content  = "ystv.co.uk"
+      name    = "signup.to.roses.media"
+      content = "vip.infra.ystv.co.uk"
     }
     media_roses_www = {
-      name     = "www.roses.media"
-      content  = "roses.media"
+      name    = "www.roses.media"
+      content = "roses.media"
     }
     media_roses_signup_www = {
-      name     = "www.signup.roses.media"
-      content  = "roses.media"
+      name    = "www.signup.roses.media"
+      content = "vip.infra.ystv.co.uk"
     }
   }
   roses_media_txt_records = {
@@ -52,8 +52,8 @@ locals {
 resource "cloudflare_dns_record" "records_cname_media_roses" {
   for_each = local.roses_media_cname_records
 
-  name     = each.value.name
-  content  = each.value.content
+  name    = each.value.name
+  content = each.value.content
 
   proxied  = false
   ttl      = 1
