@@ -4,11 +4,11 @@
 locals {
   roses_media_cname_records = {
     media_roses_data = {
-      name = "data.roses.media"
+      name    = "data.roses.media"
       content = "ec2-18-175-81-11.eu-west-2.compute.amazonaws.com"
     }
     media_roses_data_staging = {
-      name = "staging.data.roses.media"
+      name    = "staging.data.roses.media"
       content = "ec2-18-175-81-11.eu-west-2.compute.amazonaws.com"
     }
     media_roses_dev_wildcard = {
