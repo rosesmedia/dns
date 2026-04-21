@@ -9,7 +9,7 @@ locals {
     }
     media_roses_radio_ingest = {
       name    = "ingest.radio.roses.media"
-      content = "dolby.ury.york.ac.uk"
+      content = "uryrosesingest0.york.ac.uk"
     }
     media_roses_mumble = {
       name    = "mumble.roses.media"
@@ -39,6 +39,30 @@ locals {
       name    = "www.signup.roses.media"
       content = "vip.infra.ystv.co.uk"
     }
+    media_roses_radio_stream = {
+      name    = "stream.radio.roses.media"
+      content = "urystreaming01.york.ac.uk"
+    }
+  }
+  roses_media_a_records = {
+    media_roses_radio = {
+      name    = "radio.roses.media"
+      content = "144.32.124.192"
+    }
+    media_roses_radio_wildcard = {
+      name    = "*.radio.roses.media"
+      content = "144.32.124.192"
+    }
+  }
+  roses_media_aaaa_records = {
+    media_roses_radio = {
+      name    = "radio.roses.media"
+      content = "2001:630:61:17c::1:c0"
+    }
+    media_roses_radio_wildcard = {
+      name    = "*.radio.roses.media"
+      content = "2001:630:61:17c::1:c0"
+    }
   }
   roses_media_txt_records = {
     # Github domain verification
@@ -63,14 +87,32 @@ resource "cloudflare_dns_record" "records_cname_media_roses" {
   comment  = var.dns_record_comment
 }
 
-resource "cloudflare_dns_record" "record_cname_media_roses_radio_stream" {
-  content  = "144.32.64.162"
-  name     = "stream.radio.roses.media"
+resource "cloudflare_dns_record" "records_a_media_roses" {
+  for_each = local.roses_media_a_records
+
+  name    = each.value.name
+  content = each.value.content
+
   proxied  = false
   ttl      = 1
   type     = "A"
   zone_id  = var.roses_media_zone_id
   settings = {}
+  comment  = var.dns_record_comment
+}
+
+resource "cloudflare_dns_record" "records_aaaa_media_roses" {
+  for_each = local.roses_media_aaaa_records
+
+  name    = each.value.name
+  content = each.value.content
+
+  proxied  = false
+  ttl      = 1
+  type     = "AAAA"
+  zone_id  = var.roses_media_zone_id
+  settings = {}
+  comment  = var.dns_record_comment
 }
 
 resource "cloudflare_dns_record" "records_txt_media_roses" {
