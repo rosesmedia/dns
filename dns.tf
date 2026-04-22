@@ -23,10 +23,6 @@ locals {
       name    = "mumble.roses.media"
       content = "tsuro.infra.archess.mn"
     }
-    media_roses_radio = {
-      name    = "radio.roses.media"
-      content = "ury.york.ac.uk"
-    }
     media_roses_wildcard = {
       name    = "*.roses.media"
       content = "vip.infra.ystv.co.uk"
