@@ -5,7 +5,7 @@ locals {
   roses_media_cname_records = {
     media_roses_data = {
       name    = "data.roses.media"
-      content = "ec2-18-175-81-11.eu-west-2.compute.amazonaws.com"
+      content = "k8s-default-aws-dde3b80dea-401446511.eu-west-2.elb.amazonaws.com"
     }
     media_roses_data_staging = {
       name    = "staging.data.roses.media"
