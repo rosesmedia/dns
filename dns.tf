@@ -9,7 +9,7 @@ locals {
     }
     media_roses_data_staging = {
       name    = "staging.data.roses.media"
-      content = "ec2-18-175-81-11.eu-west-2.compute.amazonaws.com"
+      content = "k8s-kubesyst-traefik-e5fbc7536e-90f5cd3c624542b4.elb.eu-west-2.amazonaws.com"
     }
     media_roses_dev_wildcard = {
       name    = "*.dev.roses.media"
