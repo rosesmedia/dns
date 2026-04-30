@@ -11,6 +11,10 @@ locals {
       name    = "staging.data.roses.media"
       content = "k8s-kubesyst-traefik-e5fbc7536e-90f5cd3c624542b4.elb.eu-west-2.amazonaws.com"
     }
+    media_roses_k8s_gfx_wildcard = {
+      name    = "*.gfx.k8s.roses.media"
+      content = "k8s-kubesyst-traefik-e5fbc7536e-90f5cd3c624542b4.elb.eu-west-2.amazonaws.com"
+    }
     media_roses_dev_wildcard = {
       name    = "*.dev.roses.media"
       content = "vip.infra.ystv.co.uk"
