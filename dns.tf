@@ -55,22 +55,14 @@ locals {
   roses_media_a_records = {
     media_roses_radio = {
       name    = "radio.roses.media"
-      content = "144.32.124.192"
+      content = "144.32.64.162"
     }
     media_roses_radio_wildcard = {
       name    = "*.radio.roses.media"
-      content = "144.32.124.192"
+      content = "144.32.64.162"
     }
   }
   roses_media_aaaa_records = {
-    media_roses_radio = {
-      name    = "radio.roses.media"
-      content = "2001:630:61:17c::1:c0"
-    }
-    media_roses_radio_wildcard = {
-      name    = "*.radio.roses.media"
-      content = "2001:630:61:17c::1:c0"
-    }
   }
   roses_media_txt_records = {
     # Github domain verification
