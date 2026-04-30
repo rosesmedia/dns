@@ -47,6 +47,10 @@ locals {
       name    = "stream.radio.roses.media"
       content = "urystreaming01.york.ac.uk"
     }
+    meda_roses_radio_streaming = {
+      name    = "streaming.radio.roses.media"
+      content = "ury.york.ac.uk"
+    }
     media_roses_radio_vase = {
       name    = "vase.radio.roses.media"
       content = "ury.york.ac.uk"
