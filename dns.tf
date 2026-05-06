@@ -5,15 +5,11 @@ locals {
   roses_media_cname_records = {
     media_roses_data = {
       name    = "data.roses.media"
-      content = "k8s-kubesyst-traefik-e5fbc7536e-90f5cd3c624542b4.elb.eu-west-2.amazonaws.com"
+      content = "d2yi3dhsne189q.cloudfront.net"
     }
-    media_roses_data_staging = {
-      name    = "staging.data.roses.media"
-      content = "k8s-kubesyst-traefik-e5fbc7536e-90f5cd3c624542b4.elb.eu-west-2.amazonaws.com"
-    }
-    media_roses_k8s_gfx_wildcard = {
-      name    = "*.gfx.k8s.roses.media"
-      content = "k8s-kubesyst-traefik-e5fbc7536e-90f5cd3c624542b4.elb.eu-west-2.amazonaws.com"
+    media_roses_data_tls = {
+      name    = "_0f353999f912c58b263e3ba1a4bbf6a6.data.roses.media."
+      content = "_18efd322662cac7626e481bfd4262270.jkddzztszm.acm-validations.aws."
     }
     media_roses_dev_wildcard = {
       name    = "*.dev.roses.media"
